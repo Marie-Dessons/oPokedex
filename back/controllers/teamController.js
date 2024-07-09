@@ -1,4 +1,4 @@
-import { Team } from '../models/index.js';
+import { Team, Pokemon } from '../models/index.js';
 import Joi from 'joi';
 
 const teamController = {
@@ -10,7 +10,8 @@ const teamController = {
         res.json(teams);
     },
     async getOneTeam(req, res) {
-        const oneTeam = await Team.findByPk(req.params.id);
+        const id = req.params.id;
+        const oneTeam = await Team.findByPk(id, { include: ['pokemons'] });
         if (!oneTeam) {
             res.status(404).json({ message: 'Aucune équipe n\'a été trouvée' });
         }
@@ -72,6 +73,50 @@ const teamController = {
 
         res.status(204).end();
     },
+    async getpokemonsteam(req, res, next) {
+        // Sur le router, penser à modifier les id sur la routes
+    const { teamId, pokemonId } = req.params;
+
+    const team = await Team.findByPk(teamId, { include: 'pokemons' });
+        if (!team) {   
+        return next();   
+        };
+
+    const pokemon = await Pokemon.findByPk(pokemonId);
+    if (!pokemon) {
+        return next();
+    }
+
+    if (team.pokemons.length >= 6) {
+        return res.status(400).json({ message: 'La team a déjà six Pokémons.' });
+    }
+
+    await team.addPokemon(pokemon);
+    
+    
+    const updatedTeam = await Team.findByPk(teamId, { include: ['pokemons'] });
+    res.status(201).json(updatedTeam);
+    },
+
+    async deletepokemonsteam(req, res, next) {
+        const { teamId, pokemonId } = req.params;
+
+        const team = await Team.findByPk(teamId, { include: 'pokemons' });
+            if (!team) {   
+            return next();   
+            };
+    
+        const pokemon = await Pokemon.findByPk(pokemonId);
+        if (!pokemon) {
+            return next();
+        }
+    
+        await team.removePokemon(pokemon);
+    
+        const updatedTeam = await Team.findByPk(teamId, { include: ['pokemons'] });
+        res.status(201).json(updatedTeam);
+
+},
 };
 
 export { teamController };
