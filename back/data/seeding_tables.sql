@@ -403,6 +403,7 @@ VALUES
   (150, 12),
   (151, 12)
 ;
+
 INSERT INTO "team"
   ("name", "description")
 VALUES
@@ -410,6 +411,7 @@ VALUES
   ( 'La Team de l''enfer', 'Le feuuuuu'),
   ( 'Squad fofolle', 'Pour tout gagner')
 ;
+
 INSERT INTO "team_pokemon"
     ("pokemon_id", "team_id")
 VALUES
