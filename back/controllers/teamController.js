@@ -60,6 +60,18 @@ const teamController = {
 
         res.json(updateTeam);
     },
+    async deleteTeam(req, res, next) {
+        const id = req.params.id;
+        const targetTeam = await Team.findByPk(id);
+
+        if (!targetTeam) {
+            return next(error);
+        }
+
+        await targetTeam.destroy();
+
+        res.status(204).end();
+    },
 };
 
 export { teamController };
