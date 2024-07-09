@@ -3,7 +3,6 @@ import { sequelize } from '../database/sequelize.js';
 
 
   class PokemonHasType extends Model {}
-
  
         PokemonHasType.init(
             {

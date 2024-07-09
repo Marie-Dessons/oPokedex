@@ -93,7 +93,6 @@ const teamController = {
 
     await team.addPokemon(pokemon);
     
-    
     const updatedTeam = await Team.findByPk(teamId, { include: ['pokemons'] });
     res.status(201).json(updatedTeam);
     },
