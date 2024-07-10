@@ -1,12 +1,10 @@
-import { api } from './api.js';
+import { api } from "./api.js";
+import { getPokemonsList } from "./pokemon.js";
 
 
 async function init() {
 
-    console.log('init');
-
-    const allPokemons = await api.fetchAllPokemons();
-    console.log(allPokemons);
+getPokemonsList();
 
 };
 

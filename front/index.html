@@ -38,18 +38,24 @@
         <h1 class="title has-text-centered is-1">Pokedex</h1>
         <nav class="navbar is-flex is-justify-content-space-evenly" id="navbar_main" role="navigation"
             aria-label="main navigation">
-            <a class="navbar-item" id="nav-item-home">
-                Home
+            <a class="navbar-item" id="nav-item-pokemon">
+                Pokémons
             </a>
             <a class="navbar-item" id="nav-item-type">
                 Types
             </a>
             <a class="navbar-item" id="nav-item-team">
-                Teams
+                Equipe
             </a>
         </nav>
     </header>
     <main>
+
+        <div id="pokemon-container">
+
+        </div>
+   
+    </main>
         <!-- MODAL POKEMON DETAIL -->
     <div class="modal " id="pkm_detail">
         <div class="modal-background"></div>
@@ -181,8 +187,8 @@
     </template>
 
     <!-- POKEMON LIST ITEM TEMPLATE -->
-    <template id="pokemon-list-item-template">
-        <div class="card mb-6 has-text-centered pt-4">
+    <template id="pokemon-list-item-template modal">
+        <div class="card mb-6 has-text-centered pt-4 pokemon-list">
             <a>
                 <div class="card-image">
                     <img class="pkm_img" src="">
@@ -223,7 +229,7 @@
     </template>
     <!-- END TEAM LIST ITEM TEMPLATE -->
 
-    </main>
+   
     <script type="module" src="./assets/js/index.js" defer></script>
 </body>
 </html>
