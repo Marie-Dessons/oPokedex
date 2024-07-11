@@ -1,4 +1,4 @@
-import { Team, Pokemon } from '../models/index.js';
+import { Team, Pokemon, TeamHasPokemon } from '../models/index.js';
 import Joi from 'joi';
 
 const teamController = {

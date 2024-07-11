@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
-    <!--
+    
     <header class="bg-customColor text-white">
         <div class="container mx-auto flex flex-wrap p-5 items-center justify-between">
             <div class="flex items-center space-x-4 w-full">
@@ -33,7 +33,8 @@
             </div>
         </div>
     </header>
-    -->
+    
+    <!--
     <header class="my-5">
         <h1 class="title has-text-centered is-1">Pokedex</h1>
         <nav class="navbar is-flex is-justify-content-space-evenly" id="navbar_main" role="navigation"
@@ -49,9 +50,11 @@
             </a>
         </nav>
     </header>
+-->
     <main>
+        <div id="team-container" class="columns is-multiline is-variable is-1 is-justify-content-space-evenly" ></div>
 
-        <div id="pokemon-container">
+        <div id="pokemon-container" class="columns is-multiline is-variable is-1 is-justify-content-space-evenly">
 
         </div>
    
@@ -188,7 +191,7 @@
 
     <!-- POKEMON LIST ITEM TEMPLATE -->
     <template id="pokemon-list-item-template modal">
-        <div class="card mb-6 has-text-centered pt-4 pokemon-list">
+        <div class="card mb-6 has-text-centered pt-4 pokemon-list data-pkm-id=">
             <a>
                 <div class="card-image">
                     <img class="pkm_img" src="">
@@ -218,8 +221,7 @@
                 </h2>
                 <p class="team-description subtitle"></p>
             </div>
-
-            <div class="imgContainer image is-flex is-justify-content-center mb-2">
+            <div>
                 <!-- Faire une boucle avec les images coté JS -->
             </div>
             <div class="container btnContainer">
