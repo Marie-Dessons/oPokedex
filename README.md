@@ -1,24 +1,17 @@
-# S14-Pokedex
+# oPokedex
 
-## Structure du projet
+## Introduction
 
-### Dossier back
+Exercice sur le thème de Pokémon.
+Utilisation de Vue.js, Bulma, Tailwind et javascript vanilla pour le front.
+PostgreSQL, Sequelize, Express, Node.js pour le back.
 
-- Un dossier data qui contient les fichiers sql :
-  - create_tables.sql : permet de créer les tables de la bases de données
-  - seeding_tables.sql : permet de remplir les tables avec les données
-- .env.example : nos variables d'environnement.
-- package.json : contient nos dependances & les scripts (que vous devrez faire en vous inspirant des projets précédents.)
+Utilisation de l'API en monorepo.
 
-### Dossier docs
+### Installation
 
-- endpoints.md : contient la liste des routes qui devront être faites dans l'api
-- installation.md : contient une courte série d'instruction pour lancer le projet
-- roadmap.md : contient les attendus du projet sous forme de user-stories.
-
-### Dossier front
-
-- Un dossier assets qui contient
-  - icons : un dossier dans lequel stocker vos icons perso svg (contient déjà une pokeball)
-  - img : contient les images des pokemons, les images portent le nom du numero du pokemon (<numero>.webp)
-- Un index.html avec un début de structure que vous êtes libre d'adapter.
+git clone
+ouvrir le projet dans l'éditeur de code de votre choix
+cd back et npm install
+cd front et npm install
+npm run dev sur chaque dossier pour lancer le projet
