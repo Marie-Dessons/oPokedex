@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <header class="bg-customColor text-white">
+    <header class="bg-customColor text-white mb-6">
         <div class="container mx-auto flex flex-wrap p-5 items-center justify-between">
             <div class="flex items-center space-x-4 w-full">
                 <div class="logo">
@@ -52,12 +52,12 @@
     </header>
 -->
     <main>
+        
+
         <div id="team-container" class="columns is-multiline is-variable is-1 is-justify-content-space-evenly" ></div>
 
         <div id="pokemon-container" class="columns is-multiline is-variable is-1 is-justify-content-space-evenly">
-
         </div>
-   
     </main>
         <!-- MODAL POKEMON DETAIL -->
     <div class="modal " id="pkm_detail">
@@ -158,9 +158,7 @@
                             </tr>
                         </thead>
                         <tbody id="tbody_team">
-
                         </tbody>
-                        
                     </table>
                 </div>
                 <footer class="modal-card-foot">
@@ -174,17 +172,58 @@
     </div>
     <!-- END MODAL TEAM DETAIL -->
 
+
+<!-- MODIFY TEAM MODAL 
+    <div id="modify_team">
+        <div class="modal" id="team_modal">
+            <div class="modal-background"></div>
+        <form action="POST">
+            <div>
+                <label for="name">Nom</label>
+                <input type="text" name="name" id="name" placeholder="Nom du groupe">
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <textarea name="description" id="description" placeholder="Description du groupe"></textarea>
+            </div>
+            <div>
+                <label for="pokemon">Pokémons</label>
+                <select name="pokemon" id="pokemon" multiple>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="button is-info is-dark is-justify-content is-normal">Modifier</button>
+                <button type="button" class="button is-info is-dark is-justify-content is-normal">Annuler</button>
+            </div>
+        </form>
+    </div>
+    END MODIFY TEAM MODAL -->
+
     <template id="template-row-table">
         <tr>
+            <th>N°</th>
             <td slot="id"></td>
+            <th>Name</th>
             <td slot="name"></td>
+            <th>PV</th>
             <td slot="hp"></td>
+            <th>Attaque</th>
             <td slot="atk"></td>
+            <th>Défense</th>
             <td slot="def"></td>
+            <th>Atk Spé</th>
             <td slot="atk_spe"></td>
+            <th>Def Spé</th>
             <td slot="def_spe"></td>
+            <th>Vitesse</th>
             <td slot="speed"></td>
+            <th>Types</th>
             <td slot="types"></td>
+            <th>Options</th>
             <td slot="options"></td>
         </tr>
     </template>
@@ -214,7 +253,7 @@
 
     <!-- TEAM LIST ITEM TEMPLATE -->
     <template id="team-list-item">
-        <section class="container has-text-centered ">
+        <section class="container has-text-centered mb-4 ">
             <div class="mb-1">
                 <h2 class="team-name title">
 
